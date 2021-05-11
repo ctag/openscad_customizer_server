@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Penguin Case Customizer</title>
+</head>
+<body>
+  <h2>Penguin Case Customizer</h2>
+  <p>
+    Fill out and submit this form to render your custom case and get a download link. Only click download once, and leave page open while your STL download is rendering. Usually takes ~20 seconds to render.
+  </p>
+  <form action="http://localhost:3000/stl" method="post">
+    <label for="part">Which sections to render: </label>
+    <select name="part">
+      <option value="both">
+        Both
+      </option>
+      <option value="top">
+        Top
+      </option>
+      <option value="bottom">
+        Bottom
+      </option>
+    </select>
+    <br />
+    <label for="latch_num">Number of latches: </label>
+    <select name="latch_num">
+      <option value="1">
+        One
+      </option>
+      <option value="2">
+        Two
+      </option>
+    </select>
+    <br />
+    <label for="seal_type">Type of seal: </label>
+    <select name="seal_type">
+      <option value="flat">
+        Flat
+      </option>
+      <option value="channel_square">
+        Square Channel
+      </option>
+    </select>
+    <br />
+    <label for="height">Inner Height: </label>
+    <input type="number" name="height" value="50" min="50" max="200" />
+    <br />
+    <label for="width">Inner Width: </label>
+    <input type="number" name="width" value="100" min="24" max="200" />
+    <br />
+    <label for="depth">Inner Depth: </label>
+    <input type="number" name="depth" value="60" min="24" max="200" />
+    <br />
+    <label for="seal_height">Seal Height: </label>
+    <input type="number" name="seal_height" value="35" max="200" />
+    <br />
+    <button type="submit">Render STL</button>
+  </form>
+  <p>
+    Made with <3 by ctag
+  </p>
+</body>
+</html>
