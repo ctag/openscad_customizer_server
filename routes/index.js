@@ -39,8 +39,15 @@ function gen_stl(req) {
 }
 
 router.get('/stl', async function(req, res, next) {
-  const path = await gen_stl(req);
-  res.download(path);
+  await gen_stl(req)
+  .then(path => {
+    res.download(path);
+  })
+  .catch(err => {
+    console.log("gen_stl error: ", err);
+    res.status(400).send("Error generating STL. Check for invalid values?");
+  })
+  
 });
 
 module.exports = router;
