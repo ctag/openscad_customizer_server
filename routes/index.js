@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 function gen_path(req) {
-  const basePath = `public/meshes`
-  return `penguin_${req.query.part}_${req.query.width}w${req.query.depth}d${req.query.height}h${req.query.seal_height}sh_${req.query.latch_num}latch_${req.query.seal_type}.stl`;
+  const basePath = `public/meshes/`
+  return basePath + `penguin_${req.query.part}_${req.query.width}w${req.query.depth}d${req.query.height}h${req.query.seal_height}sh_${req.query.latch_num}latch_${req.query.seal_type}.stl`;
 }
 
 function gen_stl(req, path) {
